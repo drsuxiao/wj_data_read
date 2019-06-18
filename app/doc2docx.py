@@ -71,7 +71,7 @@ def doc2docx(from_path, to_path, ifmove=0):
 
 
 if __name__ == '__main__':
-    data_from_path = "D:\\datasource\\doc518001\\汇总4--26\\2\\"
-    data_to_path = "D:\\datasource\\518001\\"
+    data_from_path = "D:\\datafrom\\第三部分 6月\\"
+    data_to_path = "D:\\datasource\\docx\\第三部分 6月\\"
     doc2docx(data_from_path, data_to_path, 1)
 

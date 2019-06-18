@@ -6,7 +6,7 @@ from app import intomysql as mydb
 
 
 # 主程序入口
-data_source_path = "D:\\datasource\\518001\\"
+data_source_path = "D:\\datasource\\docx\\第三部分 6月\\"
 excel_file_path = "D:\\datasource\\excel\\"
 
 file_list = os.listdir(data_source_path)

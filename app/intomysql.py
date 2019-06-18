@@ -4,10 +4,11 @@
 import pymysql
 from app.excel_write import writeExcel_tuple
 
+
 def InsertData(tablename, dic):
     try:
         # 连接数据库
-        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='123456', db='test1')  # db：库名
+        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='password', db='test1')  # db：库名
         # 创建游标
         cur = conn.cursor()
         # 插入一条数据
@@ -61,7 +62,7 @@ def InsertData(tablename, dic):
 def updatedata_number(tablename, start, end):
     try:
         # 连接数据库
-        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='123456', db='test1')  # db：库名
+        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='password', db='test1')  # db：库名
         # 创建游标
         cur = conn.cursor()
 
@@ -105,7 +106,7 @@ def updatedata_number(tablename, start, end):
 def exportdata_excel(filepath, filename):
     try:
         # 连接数据库
-        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='123456', db='test1')  # db：库名
+        conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='password', db='test1')  # db：库名
         # 创建游标
         cur = conn.cursor()
 
@@ -394,7 +395,7 @@ def exportdata_excel(filepath, filename):
         querys.append(querystr)
 
         title = "22.软件厂商总体印象"
-        querystr = "select (CASE col_22A" \
+        querystr = "select (CASE col_22A " \
                    "WHEN '1' THEN '不知道' " \
                    "WHEN '2' THEN '不满意' " \
                    "WHEN '3' THEN '基本满意' " \
@@ -406,7 +407,7 @@ def exportdata_excel(filepath, filename):
         querys.append(querystr)
 
         title = "22.服务机构总体印象"
-        querystr = "select (CASE col_22B" \
+        querystr = "select (CASE col_22B " \
                    "WHEN '1' THEN '不知道' " \
                    "WHEN '2' THEN '不满意' " \
                    "WHEN '3' THEN '基本满意' " \
@@ -418,7 +419,7 @@ def exportdata_excel(filepath, filename):
         querys.append(querystr)
 
         title = "22.服务人员总体印象"
-        querystr = "select (CASE col_22C" \
+        querystr = "select (CASE col_22C " \
                    "WHEN '1' THEN '不知道' " \
                    "WHEN '2' THEN '不满意' " \
                    "WHEN '3' THEN '基本满意' " \
@@ -430,7 +431,7 @@ def exportdata_excel(filepath, filename):
         querys.append(querystr)
 
         title = "22.本次衔接工作支持服务"
-        querystr = "select (CASE col_22D" \
+        querystr = "select (CASE col_22D " \
                    "WHEN '1' THEN '不知道' " \
                    "WHEN '2' THEN '不满意' " \
                    "WHEN '3' THEN '基本满意' " \
@@ -462,10 +463,10 @@ def exportdata_excel(filepath, filename):
 
 if __name__ == '__main__':
     # 将答案进行数字化
-    #updatedata_number('wj', 1, 4)   # 1-4题  1-4
-    #updatedata_number('wj', 6, 12)  # 6-12题  9-15
-    #updatedata_number('wj', 15, 19)  # 15-19题  31-35
+    # updatedata_number('wj', 1, 4)   # 1-4题  1-4
+    # updatedata_number('wj', 6, 12)  # 6-12题  9-15
+    # updatedata_number('wj', 15, 19)  # 15-19题  31-35
 
     filepath = "E:\\python\\wj_data\\"
-    filename = "wj_data.xlsx"
-    #exportdata_excel(filepath, filename)
+    filename = "wj_data20190619.xlsx"
+    exportdata_excel(filepath, filename)

@@ -21,6 +21,8 @@ def writeExcel(dict, excel_file_path, filename='data.xlsx'):
     ws.append(list(dict.values()))
     wb.save(file_path)  # 一定要记得保存
     print("数据保存到 %s" % file_path)
+
+
 def writeExcel_tuple(tuple, excel_file_path, filename='data.xlsx'):
     if not os.path.exists(excel_file_path):
         os.mkdir(excel_file_path)
